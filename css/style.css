@@ -475,11 +475,13 @@ footer a {
   white-space: nowrap;
   font-size: 1.2em;
   width: 100%;
+  overflow: hidden;
 }
 .container_plat a p {
+  overflow: hidden;
   white-space: nowrap;
   font-size: 0.9em;
-  text-overflow: ellipsis "...";
+  text-overflow: ellipsis;
 }
 .container_plat:hover > a > .price {
   transform: translateX(-50px);
