@@ -18,16 +18,91 @@ $border: 1px solid black;
 $green: #99e2d0;
 
 
+
+
+/* loading spinner */
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.loading {
+    width: 100%;
+    opacity: 0;
+    animation: loading 3s;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    z-index: -1;
+    img{
+        width: 50%;
+    }
+}
+
+
+
+/* fin loading */
+
+
+
+
+
+
+
+
+
+
+
 /* contenu de la page */
+
+
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 body {
     margin: 0;
 }
 
+
+
 .wrapper {
     font-family: $police-default;
     width: 100%;
     margin: 0;
+}
+
+.index{
+    animation: appear 3s ease-in;
 }
 
 section {
@@ -142,10 +217,12 @@ header h1 {
 
         &:hover {
             background-color: #eeebf1;
-            &> i{
-                color:$color-primary;
+
+            &>i {
+                color: $color-primary;
             }
-            &> p{
+
+            &>p {
                 color: $color-primary;
             }
         }
@@ -156,7 +233,7 @@ header h1 {
             font-weight: bold;
         }
 
-        
+
 
         &-number {
             background-color: $color-primary;
@@ -274,54 +351,56 @@ figure {
         margin: 0;
         font-size: 1.4em;
     }
+}
 
-    .fa-solid {
-        width: 50px;
-        font-size: 2em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: black;
-        text-shadow: 0px 0px 0px black;
-        transition: all 800ms ease-in-out;
-        font-weight: lighter;
-        cursor: pointer;
-        z-index: 1;
-        position: relative;
+.fa-heart {
+    width: 50px;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-shadow: 0px 0px 0px black;
+    transition: all 800ms ease-in-out;
+    font-weight: lighter;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
 
 
 
-        &:hover {
-            &::before {
-                opacity: 0;
-            }
-
-            &::after {
-                opacity: 1;
-            }
-
-        }
-
+    &:hover {
         &::before {
-            transition: opacity 800ms ease-in-out;
+            opacity: 0;
         }
-
 
         &::after {
-            content: "\f004";
-            color: $color-primary;
-            opacity: 0;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            bottom: 0;
-            right: 0;
-            left: 10px;
-            z-index: -1;
-            transition: opacity 1000ms ease 800ms;
+            opacity: 1;
         }
+
+    }
+
+    &::before {
+        transition: opacity 800ms ease-in-out;
+        font-weight: 10;
+    }
+
+
+    &::after {
+        content: "\f004";
+        color: $color-primary;
+        opacity: 0;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        bottom: 0;
+        right: 0;
+        left: 10px;
+        z-index: -1;
+        transition: opacity 1000ms ease 800ms;
     }
 }
+
 
 
 
@@ -362,7 +441,27 @@ footer {
 
 
 
-/* card */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ card --------------------- */
 
 
 .header_carte {
@@ -383,6 +482,10 @@ footer {
         color: black;
     }
 }
+
+
+
+
 
 
 .background-img {
@@ -406,6 +509,7 @@ footer {
     border-radius: 40px 40px 0 0;
     width: 100%;
     padding-bottom: 50px;
+    white-space: nowrap;
 
     &_titre {
         display: flex;
@@ -414,84 +518,153 @@ footer {
 
         h1 {
             margin-left: 0;
-            font-size: 2em;
+            font-size: 30px;
             font-family: $police-titre;
         }
 
         i {
             margin: auto;
             margin-right: 0;
-            font-size: 1.8em;
+            font-size: 30px;
+
+            &::before {
+                font-weight: lighter;
+            }
+
+            &::after {
+                top: 0px;
+                bottom: 0px;
+                left: 9px;
+                right: 0px;
+            }
         }
     }
 
     &_plat {
         display: flex;
         flex-direction: column;
-        margin-right: 20px;
-
+        margin-left: 10px;
     }
 
 }
 
 
 .container_carte {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    z-index: 1;
-    padding-left: 20px;
-    margin-bottom: 30px;
+    width: 95%;
+    margin-bottom: 10px;
+}
 
-    a {
-        color: black;
-        text-decoration: none;
-    }
-
-    p {
-        font-size: 1em;
-        font-weight: normal;
-    }
-
-    i {
-        font-size: 2em;
-        margin: 0;
-    }
-
-    h1 {
-        font-weight: normal;
-        font-size: 1.3em;
-        height: 10px;
-
-    }
+.container_carte h1 {
+    margin-left: 15px;
+    font-size: 20px;
+    height: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 .barre_verte {
-    height: 2px;
-    background-color: $green;
-    width: 50px;
-    margin-bottom: 20px;
+    margin-left: 15px;
+    border-top: 3px solid #99E2D0;
+    width: 60px;
+    margin-bottom: 25px;
 }
 
-.plats {
+.container_plat {
+    box-sizing: content-box;
+    display: flex;
+    width: 100%;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 3px 3px 7px grey;
+}
+
+.container_plat:hover>.plat_description {
+    width: 60%;
+}
+
+.container_plat:hover>.plat_bandeau {
+    transform: scaleX(1);
+}
+
+.container_plat:hover>.plat_bandeau>.fa-circle-check {
+    transform: rotate(0deg);
+}
+
+.container_plat:hover>.price {
+    transform: translateX(15px);
+}
+
+
+
+.plat_description {
+    color: black;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     width: 80%;
     padding-left: 10px;
+    transition: all 400ms ease-in-out;
+    font-size: 16px;
 
-    h3 {
-        margin: 0 0 10px 0;
-    }
+}
 
-    p {
-        margin: 0;
-        font-size: 1em;
-    }
+.plat_description p {
+    margin: 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.plat_description h3 {
+    margin: 8px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
 
 
+
+.plat_bandeau {
+    background: #99e2d0;
+    width: 60px;
+    height: 70px;
+    transform: scaleX(0);
+    transform-origin: right;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 400ms ease-in-out;
+
+}
+
+.fa-circle-check {
+    transform: rotate(180deg);
+    transition: all 400ms ease-in;
+}
+
+.price {
+    display: flex;
+    padding-bottom: 10px;
+    font-weight: bold;
+    align-items: end;
+    transform: translateX(50px);
+    transition: all 400ms ease-in-out;
+}
+
+
+
+
 .btn {
-    margin:  auto;
+    margin: 40px auto;
     background: linear-gradient(darken($color-secondary, 10), darken($color-primary, 10));
     padding: 5px 50px 5px 50px;
     border-radius: 30px;
@@ -508,26 +681,7 @@ footer {
 
 
 
-.plat_bandeau {
-    width: 30%;
-    display: inline-block;
-    background: $green;
-    border-radius: 0px 20px 20px 0px;
-    transform: scaleX(0);
-    transition: transform 2000ms;
-    transform-origin: right;
-    height: 60px;
 
-    .fa-circle-check {
-        display: block;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 1.5rem;
-        transition: all 2000ms ease-in-out;
-    }
-
-}
 
 
 
@@ -558,111 +712,14 @@ footer {
     animation: anim_haut 800ms ease-in-out 1000ms;
 }
 
-
-
-
-.container_plat {
-    display: flex;
-    flex-direction: row-reverse;
-    border-radius: 20px;
-    box-shadow: 3px 2px 6px grey;
-    width: 95%;
-    align-items: center;
-    cursor: pointer;
-    overflow: hidden;
-    margin-bottom: 30px;
-    padding-left: 0;
-
-
-    a {
-        color: black;
-        text-decoration: none;
-        width: 100%;
-        transition: transform 400ms ease-in-out;
-        transform-origin: left;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 50px;
-        h3 {
-
-            white-space: nowrap;
-            font-size: 1.1em;
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-        }
-
-        p {
-            overflow: hidden;
-            white-space: nowrap;
-            font-size: 0.9em;
-            text-overflow: ellipsis;
-        }
-    }
-
-    &:hover>a>.price {
-        transform: translateX(-50px);
-    }
-
-    &:hover>a>.plat_description{
-        width: 60%;
-    }
-
-    &:hover>.plat_bandeau {
-        transform: scaleX(1);
-
-        &>.fa-solid {
-            transform: rotate(0deg);
-        }
-    }
-
-}
-
-.plat_bandeau {
-    background: #99E2D0;
-    height: 80px;
-    width: 20%;
-    border-radius: 0px 20px 20px 0px;
-    transform: scaleX(0);
-    transition: transform 400ms ease-in-out;
-    transform-origin: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-
-    .fa-solid {
-        font-size: 1.3em;
-        font-weight: bold;
-        text-align: center;
-        color: white;
-        transform: rotate(-480deg);
-        transition: transform 400ms ease-in-out;
-
-    }
-}
-
-.plat_description {
-    text-overflow: ellipsis'...';
-    overflow: hidden;
-    padding-left: 0x;
-    transform-origin: left;
-    transition: all 400ms ease-in-out;
+.anim--4 {
+    animation: anim_haut 800ms ease-in-out 1200ms;
 }
 
 
-.price {
-    font-weight: bold;
-    font-size: 1em;
-    justify-content: end;
-    height: 59px;
-    display: flex;
-    align-items: flex-end;
-    transform: translateX(20px);
-    transition: all 400ms ease-in-out;
-}
+
+
+
 
 
 
@@ -689,6 +746,10 @@ footer {
 
 @media screen and (min-width:768px) {
 
+
+    .loading img{
+        width: 40%;
+    }
 
     .container-fonct {
         h1 {
@@ -751,6 +812,7 @@ footer {
         h1 {
             width: 100%;
             text-align: center;
+            margin-left: 0;
         }
 
         .barre_verte {
@@ -762,8 +824,9 @@ footer {
     .container_plat {
         margin: auto;
         margin-bottom: 25px;
-        width: 90%;
+        width: 70%;
         padding-left: 15px;
+
         a {
 
             h3 {
@@ -819,6 +882,11 @@ footer {
 @media screen and (min-width: 1280px) {
 
 
+    .loading img{
+        width: 20%;
+    }
+
+
     .container-fonct {
         h1 {
             margin-bottom: 20px;
@@ -846,6 +914,6 @@ footer {
     }
 
     .container_plat {
-        width: 50%;
+        width: 80%;
     }
 }
