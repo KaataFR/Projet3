@@ -233,6 +233,43 @@ figure figcaption {
   border-radius: 0px 0px 20px 20px;
   justify-content: space-between;
 }
+figure figcaption .fa-heart {
+  width: 50px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-shadow: 0px 0px 0px black;
+  transition: all 800ms ease-in-out;
+  font-weight: lighter;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+figure figcaption .fa-heart:hover::before {
+  opacity: 0;
+}
+figure figcaption .fa-heart:hover::after {
+  opacity: 1;
+}
+figure figcaption .fa-heart::before {
+  transition: opacity 800ms ease-in-out;
+  font-weight: 10;
+}
+figure figcaption .fa-heart::after {
+  content: "\f004";
+  color: #9356DC;
+  opacity: 0;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  right: 0;
+  left: 10px;
+  z-index: -1;
+  transition: opacity 1000ms ease 800ms;
+}
 
 .card {
   display: flex;
@@ -269,44 +306,6 @@ figure figcaption {
 .card p {
   margin: 0;
   font-size: 1.4em;
-}
-
-.fa-heart {
-  width: 50px;
-  font-size: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  text-shadow: 0px 0px 0px black;
-  transition: all 800ms ease-in-out;
-  font-weight: lighter;
-  cursor: pointer;
-  z-index: 1;
-  position: relative;
-}
-.fa-heart:hover::before {
-  opacity: 0;
-}
-.fa-heart:hover::after {
-  opacity: 1;
-}
-.fa-heart::before {
-  transition: opacity 800ms ease-in-out;
-  font-weight: 10;
-}
-.fa-heart::after {
-  content: "\f004";
-  color: #9356DC;
-  opacity: 0;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  bottom: 0;
-  right: 0;
-  left: 10px;
-  z-index: -1;
-  transition: opacity 1000ms ease 800ms;
 }
 
 footer {
@@ -381,25 +380,49 @@ footer a {
   display: flex;
   margin: auto auto auto 20px;
   width: 85%;
+  justify-content: space-between;
 }
 .carte_titre h1 {
   margin-left: 0;
-  font-size: 30px;
+  font-size: 27px;
   font-family: "Shrikhand", cursive;
 }
-.carte_titre i {
-  margin: auto;
-  margin-right: 0;
-  font-size: 30px;
-}
-.carte_titre i::before {
+.carte_titre .fa-heart {
+  width: 50px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-shadow: 0px 0px 0px black;
+  transition: all 800ms ease-in-out;
   font-weight: lighter;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
 }
-.carte_titre i::after {
-  top: 0px;
-  bottom: 0px;
-  left: 9px;
-  right: 0px;
+.carte_titre .fa-heart:hover::before {
+  opacity: 0;
+}
+.carte_titre .fa-heart:hover::after {
+  opacity: 1;
+}
+.carte_titre .fa-heart::before {
+  transition: opacity 800ms ease-in-out;
+  font-weight: 10;
+}
+.carte_titre .fa-heart::after {
+  content: "\f004";
+  color: #9356DC;
+  opacity: 0;
+  font-weight: bold;
+  position: absolute;
+  top: 25px;
+  bottom: 0;
+  right: 0;
+  left: 10px;
+  z-index: -1;
+  transition: opacity 1000ms ease 800ms;
 }
 .carte_plat {
   display: flex;
@@ -414,7 +437,7 @@ footer a {
 
 .container_carte h1 {
   margin-left: 15px;
-  font-size: 20px;
+  font-size: 18px;
   height: 15px;
   font-weight: normal;
   text-transform: uppercase;
@@ -453,7 +476,7 @@ footer a {
 }
 
 .container_plat:hover > .price {
-  transform: translateX(15px);
+  transform: translateX(0px);
 }
 
 .plat_description {
@@ -461,10 +484,10 @@ footer a {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   padding-left: 10px;
   transition: all 400ms ease-in-out;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .plat_description p {

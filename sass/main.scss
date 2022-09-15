@@ -308,6 +308,54 @@ figure {
         padding: 20px;
         border-radius: 0px 0px 20px 20px;
         justify-content: space-between;
+
+        .fa-heart {
+            width: 50px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-shadow: 0px 0px 0px black;
+            transition: all 800ms ease-in-out;
+            font-weight: lighter;
+            cursor: pointer;
+            z-index: 1;
+            position: relative;
+        
+        
+        
+            &:hover {
+                &::before {
+                    opacity: 0;
+                }
+        
+                &::after {
+                    opacity: 1;
+                }
+        
+            }
+        
+            &::before {
+                transition: opacity 800ms ease-in-out;
+                font-weight: 10;
+            }
+        
+        
+            &::after {
+                content: "\f004";
+                color: $color-primary;
+                opacity: 0;
+                font-weight: bold;
+                position: absolute;
+                top: 10px;
+                bottom: 0;
+                right: 0;
+                left: 10px;
+                z-index: -1;
+                transition: opacity 1000ms ease 800ms;
+            }
+        }
     }
 }
 
@@ -353,53 +401,7 @@ figure {
     }
 }
 
-.fa-heart {
-    width: 50px;
-    font-size: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    text-shadow: 0px 0px 0px black;
-    transition: all 800ms ease-in-out;
-    font-weight: lighter;
-    cursor: pointer;
-    z-index: 1;
-    position: relative;
 
-
-
-    &:hover {
-        &::before {
-            opacity: 0;
-        }
-
-        &::after {
-            opacity: 1;
-        }
-
-    }
-
-    &::before {
-        transition: opacity 800ms ease-in-out;
-        font-weight: 10;
-    }
-
-
-    &::after {
-        content: "\f004";
-        color: $color-primary;
-        opacity: 0;
-        font-weight: bold;
-        position: absolute;
-        top: 10px;
-        bottom: 0;
-        right: 0;
-        left: 10px;
-        z-index: -1;
-        transition: opacity 1000ms ease 800ms;
-    }
-}
 
 
 
@@ -515,27 +517,58 @@ footer {
         display: flex;
         margin: auto auto auto 20px;
         width: 85%;
-
+        justify-content: space-between;
         h1 {
             margin-left: 0;
-            font-size: 30px;
+            font-size: 27px;
             font-family: $police-titre;
         }
 
-        i {
-            margin: auto;
-            margin-right: 0;
-            font-size: 30px;
-
-            &::before {
-                font-weight: lighter;
+        .fa-heart {
+            width: 50px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-shadow: 0px 0px 0px black;
+            transition: all 800ms ease-in-out;
+            font-weight: lighter;
+            cursor: pointer;
+            z-index: 1;
+            position: relative;
+        
+        
+        
+            &:hover {
+                &::before {
+                    opacity: 0;
+                }
+        
+                &::after {
+                    opacity: 1;
+                }
+        
             }
-
+        
+            &::before {
+                transition: opacity 800ms ease-in-out;
+                font-weight: 10;
+            }
+        
+        
             &::after {
-                top: 0px;
-                bottom: 0px;
-                left: 9px;
-                right: 0px;
+                content: "\f004";
+                color: $color-primary;
+                opacity: 0;
+                font-weight: bold;
+                position: absolute;
+                top: 25px;
+                bottom: 0;
+                right: 0;
+                left: 10px;
+                z-index: -1;
+                transition: opacity 1000ms ease 800ms;
             }
         }
     }
@@ -556,7 +589,7 @@ footer {
 
 .container_carte h1 {
     margin-left: 15px;
-    font-size: 20px;
+    font-size: 18px;
     height: 15px;
     font-weight: normal;
     text-transform: uppercase;
@@ -595,7 +628,7 @@ footer {
 }
 
 .container_plat:hover>.price {
-    transform: translateX(15px);
+    transform: translateX(0px);
 }
 
 
@@ -605,10 +638,10 @@ footer {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 75%;
     padding-left: 10px;
     transition: all 400ms ease-in-out;
-    font-size: 16px;
+    font-size: 15px;
 
 }
 
