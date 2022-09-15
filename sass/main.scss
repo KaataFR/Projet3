@@ -672,26 +672,27 @@ footer {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 75%;
     padding-left: 10px;
     transition: all 400ms ease-in-out;
-    font-size: 14px;
+
 
 }
 
 .plat_description p {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .plat_description h3 {
-    margin: 8px 0;
+    margin: 14px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 15px;
 
 }
 
