@@ -1,8 +1,7 @@
 /* polices */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-/* variable */
-/* loading spinner */
+/* utils*/
 @keyframes loading {
   0% {
     opacity: 1;
@@ -31,27 +30,6 @@
     transform: rotate(720deg);
   }
 }
-.loading {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: loading 3s;
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 40%;
-  text-align: center;
-  z-index: -1;
-}
-.loading img {
-  width: 50%;
-  animation: rotate 3s;
-}
-
-/* fin loading */
-/* contenu de la page */
 @keyframes appear {
   0% {
     opacity: 0;
@@ -63,30 +41,19 @@
     opacity: 1;
   }
 }
-body {
-  margin: 0;
+@keyframes anim_haut {
+  0% {
+    opacity: 0.1;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
-
-.wrapper {
-  font-family: "Roboto", sans-serif;
-  width: 100%;
-  margin: 0;
-}
-
+/* pages */
 .index {
   animation: appear 3s ease-in;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: -40px;
-}
-
-header h1 {
-  text-align: center;
-  font-family: "Shrikhand", cursive;
-  font-size: 2em;
 }
 
 .container {
@@ -98,13 +65,30 @@ header h1 {
 .container-fonct {
   width: 100%;
   margin-top: 0;
+  /* version tablette */
+  /* version desktop */
 }
 .container-fonct h1 {
-  padding: 5%;
+  padding-left: 15px;
 }
-.container_explorer {
+.container-fonct_explorer {
   margin-top: 0;
   margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .container-fonct {
+    margin: auto;
+    width: 70%;
+  }
+  .container-fonct h1 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container-fonct h1 {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
 }
 
 .localisation {
@@ -201,6 +185,16 @@ header h1 {
   font-size: 0.9em;
   margin-right: 20px;
 }
+@media screen and (min-width: 768px) {
+  .fonct-choice {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .fonct-choice {
+    width: 20%;
+  }
+}
 
 .fa-mobile-screen-button,
 .fa-bars,
@@ -226,6 +220,35 @@ header h1 {
 .resto h1 {
   margin: 0;
   font-size: 1.7em;
+}
+@media screen and (min-width: 768px) {
+  .resto {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .resto > h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .resto .card {
+    display: flex;
+    width: 49%;
+    margin: 0 0 45px 0;
+  }
+  .resto .card .new {
+    left: 65%;
+    transform: scale(1.1) translateX(0px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .resto {
+    width: 50%;
+  }
 }
 
 figure {
@@ -253,41 +276,15 @@ figure figcaption {
   justify-content: space-between;
 }
 figure figcaption .fa-heart {
-  width: 50px;
-  font-size: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  text-shadow: 0px 0px 0px black;
-  transition: all 800ms ease-in-out;
-  font-weight: lighter;
-  cursor: pointer;
-  z-index: 1;
-  position: relative;
-}
-figure figcaption .fa-heart:hover::before {
-  opacity: 0;
-}
-figure figcaption .fa-heart:hover::after {
-  opacity: 1;
-}
-figure figcaption .fa-heart::before {
-  transition: opacity 800ms ease-in-out;
-  font-weight: 10;
+  height: fit-content;
 }
 figure figcaption .fa-heart::after {
-  content: "\f004";
-  color: #9356DC;
-  opacity: 0;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  bottom: 0;
-  right: 0;
-  left: 10px;
-  z-index: -1;
-  transition: opacity 1000ms ease 800ms;
+  top: 0px;
+}
+@media screen and (min-width: 768px) {
+  figure .new {
+    transform: translateX(100px);
+  }
 }
 
 .card {
@@ -327,36 +324,6 @@ figure figcaption .fa-heart::after {
   font-size: 1.4em;
 }
 
-footer {
-  background-color: rgb(53, 52, 52);
-  color: white;
-  padding: 25px;
-  margin: 0;
-}
-footer h1 {
-  color: white;
-  font-family: "Shrikhand", cursive;
-  font-weight: normal;
-  height: 0px;
-  font-size: 1.5em;
-}
-footer a {
-  text-decoration: none;
-  color: white;
-  height: 35px;
-}
-
-.bloc-footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.fa-utensils,
-.fa-handshake-angle {
-  width: 30px;
-}
-
-/* ------------------------ card --------------------- */
 .header_carte {
   display: flex;
   margin-bottom: 10px;
@@ -367,6 +334,14 @@ footer a {
 }
 .header_carte h1 {
   margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .header_carte h1 h1 {
+    width: 100%;
+    text-align: center;
+    padding-left: 20%;
+    font-size: 40px;
+  }
 }
 .header_carte .fa-arrow-left:hover {
   color: #9356DC;
@@ -410,68 +385,66 @@ footer a {
   font-family: "Shrikhand", cursive;
 }
 .carte_titre .fa-heart {
-  width: 50px;
-  font-size: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  text-shadow: 0px 0px 0px black;
-  transition: all 800ms ease-in-out;
-  font-weight: lighter;
-  cursor: pointer;
-  z-index: 1;
-  position: relative;
-}
-.carte_titre .fa-heart:hover::before {
-  opacity: 0;
-}
-.carte_titre .fa-heart:hover::after {
-  opacity: 1;
-}
-.carte_titre .fa-heart::before {
-  transition: opacity 800ms ease-in-out;
-  font-weight: 10;
+  top: 20px;
+  height: fit-content;
 }
 .carte_titre .fa-heart::after {
-  content: "\f004";
-  color: #9356DC;
-  opacity: 0;
-  font-weight: bold;
-  position: absolute;
-  top: 25px;
-  bottom: 0;
-  right: 0;
-  left: 10px;
-  z-index: -1;
-  transition: opacity 1000ms ease 800ms;
+  top: 0px;
 }
 .carte_plat {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
 }
+@media screen and (min-width: 768px) {
+  .carte {
+    margin: auto;
+    width: 70%;
+  }
+  .carte_titre h1 {
+    font-size: 34px;
+  }
+  .carte_titre .fa-heart {
+    top: 0px;
+    align-items: center;
+  }
+  .carte_titre .fa-heart::after {
+    top: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .carte {
+    width: 40%;
+  }
+}
 
 .container_carte {
   width: 95%;
   margin-bottom: 10px;
 }
-
 .container_carte h1 {
   margin-left: 15px;
   font-size: 18px;
-  height: 15px;
+  height: 10px;
   font-weight: normal;
   text-transform: uppercase;
 }
-
-.barre_verte {
+.container_carte .barre_verte {
   margin-left: 15px;
-  border-top: 3px solid #99E2D0;
+  border-top: 2px solid #99E2D0;
   width: 60px;
   margin-bottom: 25px;
 }
-
+@media screen and (min-width: 768px) {
+  .container_carte h1 {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .container_carte .barre_verte {
+    margin: auto auto 50px auto;
+  }
+}
 .container_plat {
   box-sizing: content-box;
   display: flex;
@@ -484,21 +457,39 @@ footer a {
   justify-content: space-between;
   box-shadow: 3px 3px 7px grey;
 }
-
 .container_plat:hover > .plat_description {
   width: 60%;
 }
-
 .container_plat:hover > .plat_bandeau {
   transform: scaleX(1);
 }
-
 .container_plat:hover > .plat_bandeau > .fa-circle-check {
   transform: rotate(0deg);
 }
-
 .container_plat:hover > .price {
   transform: translateX(0px);
+}
+@media screen and (min-width: 768px) {
+  .container_plat {
+    margin: auto;
+    margin-bottom: 25px;
+    width: 80%;
+    padding-left: 15px;
+  }
+  .container_plat .plat_description h3 {
+    font-size: 20px;
+  }
+  .container_plat .plat_description p {
+    font-size: 17px;
+  }
+  .container_plat .plat_bandeau {
+    height: 80px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container_plat {
+    width: 80%;
+  }
 }
 
 .plat_description {
@@ -510,7 +501,6 @@ footer a {
   padding-left: 10px;
   transition: all 400ms ease-in-out;
 }
-
 .plat_description p {
   margin: 0;
   font-size: 12px;
@@ -518,7 +508,6 @@ footer a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .plat_description h3 {
   margin: 14px 0;
   overflow: hidden;
@@ -526,7 +515,6 @@ footer a {
   white-space: nowrap;
   font-size: 15px;
 }
-
 .plat_bandeau {
   background: #99e2d0;
   width: 60px;
@@ -541,8 +529,7 @@ footer a {
   font-size: 1.3rem;
   transition: all 400ms ease-in-out;
 }
-
-.fa-circle-check {
+.plat_bandeau .fa-circle-check {
   transform: rotate(180deg);
   transition: all 400ms ease-in;
 }
@@ -556,6 +543,73 @@ footer a {
   transition: all 400ms ease-in-out;
 }
 
+/* bloc BEM */
+/* coeur qui change de couleur */
+.fa-heart {
+  width: fit-content;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-shadow: 0px 0px 0px black;
+  transition: all 400ms ease-in-out;
+  font-weight: lighter;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  top: 15px;
+}
+.fa-heart:hover::before {
+  opacity: 0;
+}
+.fa-heart:hover::after {
+  opacity: 1;
+}
+.fa-heart::before {
+  transition: opacity 800ms ease-in-out;
+  font-weight: 10;
+}
+.fa-heart::after {
+  content: "\f004";
+  color: #9356DC;
+  opacity: 0;
+  font-weight: bold;
+  position: absolute;
+  top: 22px;
+  bottom: 0;
+  right: 0;
+  left: 0px;
+  z-index: -1;
+  transition: opacity 1000ms ease 800ms;
+}
+
+/* loading */
+.loading {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: loading 3s;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 43%;
+  text-align: center;
+  z-index: -1;
+}
+.loading img {
+  width: 20%;
+  animation: rotate 3s;
+}
+@media screen and (min-width: 1280px) {
+  .loading img {
+    width: 5%;
+  }
+}
+
+/* bouton qui change au survol */
 .btn {
   margin: 40px auto;
   background: linear-gradient(#ff46cc, #782cd3);
@@ -571,17 +625,7 @@ footer a {
   opacity: 1.2;
 }
 
-/* TEST  */
-@keyframes anim_haut {
-  0% {
-    opacity: 0.1;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
+/* animation bloc */
 .anim--1 {
   animation: anim_haut 800ms ease-in-out 200ms;
 }
@@ -598,85 +642,26 @@ footer a {
   animation: anim_haut 800ms ease-in-out 1200ms;
 }
 
-/* breakpoint Tablette / Desktop */
+/* layout */
+footer {
+  background-color: rgb(53, 52, 52);
+  color: white;
+  padding: 25px;
+  margin: 0;
+}
+footer h1 {
+  color: white;
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+  height: 0px;
+  font-size: 1.5em;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  height: 35px;
+}
 @media screen and (min-width: 768px) {
-  .loading img {
-    width: 40%;
-  }
-  .container-fonct {
-    margin: auto;
-    width: 70%;
-  }
-  .container-fonct h1 {
-    text-align: center;
-  }
-  .resto {
-    margin: auto;
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .resto > h1 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .resto .card {
-    display: flex;
-    width: 49%;
-    margin: 0 0 45px 0;
-  }
-  .resto .card .new {
-    left: 65%;
-    transform: scale(1.1) translateX(0px);
-  }
-  /*  menus */
-  .header_carte h1 {
-    width: 100%;
-    text-align: center;
-    padding-left: 20%;
-    font-size: 40px;
-  }
-  .carte {
-    margin: auto;
-    width: 70%;
-  }
-  .carte_titre h1 {
-    font-size: 34px;
-  }
-  .carte_titre .fa-heart::after {
-    top: 36px;
-  }
-  .container_carte h1 {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-  }
-  .container_carte .barre_verte {
-    margin: auto auto 50px auto;
-  }
-  .container_plat {
-    margin: auto;
-    margin-bottom: 25px;
-    width: 70%;
-    padding-left: 15px;
-  }
-  .container_plat a h3 {
-    height: 20px;
-    font-size: 1em;
-  }
-  .container_plat a p {
-    height: 20px;
-    font-size: 0.8em;
-  }
-  .fonct-choice {
-    width: 60%;
-  }
-  figure .new {
-    transform: translateX(100px);
-  }
   footer h1 {
     text-align: center;
     font-size: 2em;
@@ -692,27 +677,32 @@ footer a {
     color: #FF79DA;
   }
 }
-@media screen and (min-width: 1280px) {
-  .loading img {
-    width: 20%;
-  }
-  .container-fonct h1 {
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  .fonct-choice {
-    width: 20%;
-  }
-  .resto {
-    width: 50%;
-  }
-  /* menus */
-  .carte {
-    width: 40%;
-  }
-  .container_plat {
-    width: 80%;
-  }
+
+.bloc-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -40px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

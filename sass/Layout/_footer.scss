@@ -1,0 +1,45 @@
+footer {
+    background-color: rgb(53, 52, 52);
+    color: white;
+    padding: 25px;
+    margin: 0;
+
+    h1 {
+        color: white;
+        font-family: $police-titre;
+        font-weight: normal;
+        height: 0px;
+        font-size: 1.5em;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        height: 35px;
+    }
+
+    @include tablet {
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 60px;
+        }
+
+        .bloc-footer {
+            text-align: center;
+
+            a {
+                transition: all 400ms ease-in-out;
+
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+}
+
+.bloc-footer {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+
+.wrapper {
+    font-family: $police-default;
+    width: 100%;
+    margin: 0;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -40px;
+}
+
+header h1 {
+    text-align: center;
+    font-family: $police-titre;
+    font-size: 2em;
+}

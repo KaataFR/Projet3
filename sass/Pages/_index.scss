@@ -1,0 +1,307 @@
+.index {
+    animation: appear 3s ease-in;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 40px 0px;
+    width: 100%;
+
+    &-fonct {
+        width: 100%;
+        margin-top: 0;
+
+        h1{
+            padding-left: 15px;
+        }
+
+        &_explorer {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+
+        /* version tablette */
+        @include tablet {
+            h1 {
+                text-align: center;
+            }
+
+            margin: auto;
+            width: 70%;
+        }
+
+        /* version desktop */
+        @include desktop {
+            h1 {
+                margin-bottom: 20px;
+                padding: 20px;
+            }
+        }
+    }
+
+   
+
+
+}
+
+
+.localisation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #cecece;
+    padding: 10px 0 10px 0;
+
+    p {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 130px;
+        padding: 10px;
+        font-weight: bold;
+        font-family: 'Roboto', Arial;
+    }
+}
+
+.explorer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    background-color: #f1f1f1;
+
+    h1 {
+        font-size: 1.5em;
+        width: 60%;
+        text-align: center;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    p {
+        margin: 10px auto 20px auto;
+        width: 70%;
+    }
+
+    .btn {
+        width: 200px;
+        margin: 10px auto 50px auto;
+        padding: 15px;
+        background: linear-gradient($color-secondary, $color-primary);
+        border-radius: 20px;
+        box-shadow: 3px 3px 3px #f1f1f1;
+        color: white;
+        font-size: 1em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.fonct {
+    display: flex;
+    flex-direction: column;
+
+    &-choice {
+        text-align: center;
+        display: flex;
+        margin: auto;
+        width: 75%;
+        justify-content: space-between;
+        background-color: #f1f1f1;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 3px 3px 6px rgb(201, 191, 191);
+        padding-right: 75px;
+        padding: 10px 75px 10px 0px;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #eeebf1;
+
+            &>i {
+                color: $color-primary;
+            }
+
+            &>p {
+                color: $color-primary;
+            }
+        }
+
+        p {
+            margin-left: 20px;
+            width: 180px;
+            font-weight: bold;
+        }
+
+        &-number {
+            background-color: $color-primary;
+            border-radius: 12px;
+            padding: 3px 8px 3px 8px;
+            position: relative;
+            right: 5px;
+            height: fit-content;
+            color: white;
+            font-size: 0.9em;
+            margin-right: 20px;
+        }
+
+        @include tablet {
+            width: 60%;
+        }
+
+        @include desktop{
+            width: 20%;
+        }
+
+    }
+
+}
+
+.fa-mobile-screen-button,
+.fa-bars,
+.fa-store {
+    color: grey;
+    font-size: 1.2em;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+
+.resto {
+
+    margin: 0%;
+    font-size: 0.9em;
+    background-color: #f1f1f1;
+    width: 90%;
+    padding: 5%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    h1 {
+        margin: 0;
+        font-size: 1.7em;
+
+    }
+
+    @include tablet {
+        margin: auto;
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        &>h1 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            display: flex;
+            width: 49%;
+            margin: 0 0 45px 0;
+
+            .new {
+                left: 65%;
+                transform: scale(1.1) translateX(0px);
+            }
+        }
+    }
+
+    @include desktop{
+        width: 50%;
+    }
+
+}
+
+figure {
+    margin: 0;
+    width: 100%;
+
+    a {
+        color: black;
+        text-decoration: none;
+        height: fit-content
+    }
+
+    img {
+        width: 100%;
+        height: 170px;
+        border-radius: 20px 20px 0px 0px;
+        object-fit: cover;
+        position: relative;
+    }
+
+    figcaption {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        border-radius: 0px 0px 20px 20px;
+        justify-content: space-between;
+
+        .fa-heart {
+            height: fit-content;
+            &::after {
+                top: 0px;
+            }
+        }
+    }
+
+    @include tablet {
+        .new {
+            transform: translateX(100px);
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 0;
+
+    &-text {
+        font-size: 0.8em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50px;
+    }
+
+    &-new {
+        margin-bottom: 0%;
+    }
+
+    .new {
+        display: inline-block;
+        background-color: #99E2D0;
+        width: fit-content;
+        padding: 5px 10px 5px 10px;
+        position: relative;
+        top: 40px;
+        left: 73%;
+        font-weight: bold;
+        color: #027a5c;
+        z-index: 1;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.4em;
+    }
+}
