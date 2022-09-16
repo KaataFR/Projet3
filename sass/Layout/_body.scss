@@ -17,7 +17,12 @@ section {
 }
 
 header h1 {
-    text-align: center;
     font-family: $police-titre;
-    font-size: 2em;
+    font-size: 29px;
+    text-align: center;
+
+    @include tablet{
+    font-size: 45px;
+    padding-left: 10px;
+    }
 }

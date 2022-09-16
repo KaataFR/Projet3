@@ -51,6 +51,26 @@
     transform: translateY(0px);
   }
 }
+@keyframes shake {
+  0% {
+    transform: rotate(1deg);
+  }
+  20% {
+    transform: rotate(-1deg);
+  }
+  40% {
+    transform: rotate(1deg);
+  }
+  60% {
+    transform: rotate(-1deg);
+  }
+  80% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* pages */
 .index {
   animation: appear 3s ease-in;
@@ -328,8 +348,8 @@ figure figcaption .fa-heart::after {
   display: flex;
   margin-bottom: 10px;
   height: 60px;
-  padding-left: 20px;
-  width: 80%;
+  padding-left: 0px;
+  width: 100%;
   justify-content: space-between;
 }
 .header_carte h1 {
@@ -340,7 +360,6 @@ figure figcaption .fa-heart::after {
     width: 100%;
     text-align: center;
     padding-left: 20%;
-    font-size: 40px;
   }
 }
 .header_carte .fa-arrow-left:hover {
@@ -381,11 +400,11 @@ figure figcaption .fa-heart::after {
 }
 .carte_titre h1 {
   margin-left: 0;
-  font-size: 27px;
+  font-size: 28px;
   font-family: "Shrikhand", cursive;
 }
 .carte_titre .fa-heart {
-  top: 20px;
+  top: 26px;
   height: fit-content;
 }
 .carte_titre .fa-heart::after {
@@ -405,11 +424,8 @@ figure figcaption .fa-heart::after {
     font-size: 34px;
   }
   .carte_titre .fa-heart {
-    top: 0px;
-    align-items: center;
-  }
-  .carte_titre .fa-heart::after {
-    top: 36px;
+    font-size: 35px;
+    top: 35px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -440,6 +456,7 @@ figure figcaption .fa-heart::after {
     width: 100%;
     text-align: center;
     margin-left: 0;
+    font-size: 25px;
   }
   .container_carte .barre_verte {
     margin: auto auto 50px auto;
@@ -473,17 +490,23 @@ figure figcaption .fa-heart::after {
   .container_plat {
     margin: auto;
     margin-bottom: 25px;
-    width: 80%;
+    width: 90%;
     padding-left: 15px;
   }
+  .container_plat .plat_description:hover > .plat_description {
+    width: 50%;
+  }
   .container_plat .plat_description h3 {
-    font-size: 20px;
+    font-size: 24px;
   }
   .container_plat .plat_description p {
     font-size: 17px;
   }
   .container_plat .plat_bandeau {
     height: 80px;
+  }
+  .container_plat .price {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -497,19 +520,19 @@ figure figcaption .fa-heart::after {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 70%;
   padding-left: 10px;
   transition: all 400ms ease-in-out;
 }
 .plat_description p {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .plat_description h3 {
-  margin: 14px 0;
+  margin: 13px 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -624,6 +647,14 @@ figure figcaption .fa-heart::after {
 .btn:hover {
   opacity: 1.2;
 }
+@media screen and (min-width: 768px) {
+  .btn {
+    font-size: 20px;
+  }
+  .btn:hover {
+    animation: shake 800ms ease-in 500ms;
+  }
+}
 
 /* animation bloc */
 .anim--1 {
@@ -664,11 +695,13 @@ footer a {
 @media screen and (min-width: 768px) {
   footer h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 45px;
     margin-bottom: 60px;
   }
   footer .bloc-footer {
     text-align: center;
+    font-size: 25px;
+    line-height: 30px;
   }
   footer .bloc-footer a {
     transition: all 400ms ease-in-out;
@@ -700,9 +733,15 @@ section {
 }
 
 header h1 {
-  text-align: center;
   font-family: "Shrikhand", cursive;
-  font-size: 2em;
+  font-size: 29px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  header h1 {
+    font-size: 45px;
+    padding-left: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

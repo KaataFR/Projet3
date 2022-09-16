@@ -97,6 +97,13 @@
     &:hover {
         opacity: 1.2;
     }
+
+    @include tablet{
+        font-size: 20px;
+        &:hover{
+            animation: shake 800ms ease-in 500ms;
+        }
+    }
 }
 
 

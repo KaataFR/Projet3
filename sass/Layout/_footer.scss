@@ -21,13 +21,14 @@ footer {
     @include tablet {
         h1 {
             text-align: center;
-            font-size: 2em;
+            font-size: 45px;
             margin-bottom: 60px;
         }
 
         .bloc-footer {
             text-align: center;
-
+            font-size: 25px;
+            line-height: 30px;
             a {
                 transition: all 400ms ease-in-out;
 

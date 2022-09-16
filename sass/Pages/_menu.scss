@@ -2,8 +2,8 @@
     display: flex;
     margin-bottom: 10px;
     height: 60px;
-    padding-left: 20px;
-    width: 80%;
+    padding-left: 0px;
+    width: 100%;
     justify-content: space-between;
 
     h1 {
@@ -14,7 +14,6 @@
                 width: 100%;
                 text-align: center;
                 padding-left: 20%;
-                font-size: 40px;
             }
         }
     }
@@ -64,12 +63,12 @@
 
         h1 {
             margin-left: 0;
-            font-size: 27px;
+            font-size: 28px;
             font-family: $police-titre;
         }
 
         .fa-heart {
-            top: 20px;
+            top: 26px;
             height: fit-content;
 
             &::after {
@@ -96,12 +95,8 @@
             }
 
             .fa-heart {
-                top: 0px;
-                align-items: center;
-
-                &::after {
-                    top: 36px;
-                }
+                font-size: 35px;
+                top: 35px;
             }
         }
     }
@@ -139,6 +134,7 @@
                 width: 100%;
                 text-align: center;
                 margin-left: 0;
+                font-size: 25px;
             }
 
             .barre_verte {
@@ -183,24 +179,35 @@
         @include tablet {
             margin: auto;
             margin-bottom: 25px;
-            width: 80%;
+            width: 90%;
             padding-left: 15px;
 
+
+
             .plat_description {
+                &:hover {
+                    &>.plat_description {
+                        width: 50%;
+                    }
+                }
 
                 h3 {
-                    
-                    font-size: 20px;
+
+                    font-size: 24px;
                 }
 
                 p {
-                    
+
                     font-size: 17px;
                 }
             }
 
-            .plat_bandeau{
+            .plat_bandeau {
                 height: 80px;
+            }
+
+            .price{
+                font-size: 20px;
             }
         }
 
@@ -218,20 +225,20 @@
         text-decoration: none;
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 70%;
         padding-left: 10px;
         transition: all 400ms ease-in-out;
 
         p {
             margin: 0;
-            font-size: 12px;
+            font-size: 11px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
 
         h3 {
-            margin: 14px 0;
+            margin: 13px 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
