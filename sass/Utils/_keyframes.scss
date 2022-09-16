@@ -63,3 +63,32 @@
         transform: translateY(0px)
     }
 }
+
+
+
+
+@keyframes shake{
+    0% {
+        transform: rotate($shake);
+    }
+
+    20% {
+        transform: rotate(-$shake);
+    }
+
+    40% {
+        transform: rotate($shake);
+    }
+
+    60% {
+        transform: rotate(-$shake);
+    }
+
+    80%{
+        transform: rotate($shake);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
