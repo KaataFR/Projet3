@@ -1,14 +1,9 @@
-/* polices */
 @import "./Base/polices";
-/* utils*/
 @import "./Utils/variables";
 @import "./Utils/keyframes";
 @import "./Utils/mixin";
-/* pages */
 @import "./Pages/index";
-@import "./Pages/menu";
-/* bloc BEM */ 
+@import "./Pages/menu"; 
 @import "./Composants/bloc-bem";
-/* layout */ 
 @import "./Layout/footer";
 @import "./Layout/body";

@@ -61,7 +61,7 @@
         width: 85%;
         justify-content: space-between;
 
-        h1 {
+        h2 {
             margin-left: 0;
             font-size: 28px;
             font-family: $police-titre;
@@ -90,7 +90,7 @@
         width: 70%;
 
         &_titre {
-            h1 {
+            h2 {
                 font-size: 34px;
             }
 
@@ -113,7 +113,7 @@
         width: 95%;
         margin-bottom: 10px;
 
-        h1 {
+        h2 {
             margin-left: 15px;
             font-size: 18px;
             height: 10px;
@@ -130,7 +130,7 @@
         }
 
         @include tablet {
-            h1 {
+            h2 {
                 width: 100%;
                 text-align: center;
                 margin-left: 0;
@@ -193,7 +193,7 @@
 
                 h3 {
 
-                    font-size: 24px;
+                    font-size: 19px;
                 }
 
                 p {
@@ -207,7 +207,7 @@
             }
 
             .price{
-                font-size: 20px;
+                font-size: 19px;
             }
         }
 
