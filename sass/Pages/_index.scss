@@ -53,14 +53,15 @@
     width: 100%;
     background-color: #cecece;
     padding: 10px 0 10px 0;
+    box-shadow: 2px -2px 6px grey;
 
     p {
         margin: auto;
         display: flex;
         justify-content: space-between;
-        width: 130px;
+        width: 140px;
         padding: 10px;
-        font-weight: bold;
+        font-weight: 550;
         font-family: 'Roboto', Arial;
     }
 }
@@ -123,13 +124,9 @@
         transition: $transition;
 
         &:hover {
-            background-color: #eeebf1;
+            background-color: #F5EDFF;
 
             &>i {
-                color: $color-primary;
-            }
-
-            &>p {
                 color: $color-primary;
             }
         }
@@ -307,6 +304,6 @@ figure {
 
     p {
         margin: 0;
-        font-size: 1.4em;
+        font-size: 18px;
     }
 }

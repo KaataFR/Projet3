@@ -231,7 +231,7 @@
 
         p {
             margin: 0;
-            font-size: 11px;
+            font-size: 13px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -242,7 +242,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 15px;
+            font-size: 17px;
 
         }
     }
@@ -262,7 +262,7 @@
         transition: all 400ms ease-in-out;
 
         .fa-circle-check {
-            transform: rotate(180deg);
+            transform: rotate(360deg);
             transition: all 400ms ease-in;
         }
 

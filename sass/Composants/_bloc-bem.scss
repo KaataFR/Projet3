@@ -96,6 +96,7 @@
 
     &:hover {
         opacity: 1.2;
+        box-shadow: 3px 3px 6px grey;
     }
 
     @include tablet{
